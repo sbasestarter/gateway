@@ -1,0 +1,20 @@
+GRpcServerConfig:
+  Name: "gateway:1"
+  Address: ":30000"
+  DiscoveryExConfig:
+    ExternalAddress: "127.0.0.1"
+  EnableTracing: true
+  TracingConfig:
+    ServerAddr: "dev.env:6831"
+    ServiceName: "gateway"
+  EnableGRpcWeb: true
+  GRpcWebAddress: ":30100"
+GRpcClientConfigTpl:
+  EnableTracing: true
+  TracingConfig:
+    ServerAddr: "dev.env:6831"
+    ServiceName: "gateway-cli"
+DbConfig:
+  Redis:
+    "redis-1":
+      DSN: "redis://:*@dev.env:8900/2"
